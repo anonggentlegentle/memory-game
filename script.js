@@ -38,8 +38,8 @@ const checkMatch = function () {
   } else if (cardsClicked.at(0) === cardsClicked.at(1)) {
     cards[optionOneId].setAttribute("src", "images/white.jpg");
     cards[optionTwoId].setAttribute("src", "images/white.jpg");
-    cards[optionOneId].removeEventListener("click", flipCard);
-    cards[optionTwoId].removeEventListener("click", flipCard);
+    cards[optionOneId].removeEventListener("click", flip);
+    cards[optionTwoId].removeEventListener("click", flip);
 
     cardCorrect.push(cardsClicked);
 
@@ -64,7 +64,7 @@ const checkMatch = function () {
   }
 };
 
-const flipCard = function () {
+const flip = function () {
   const cardId = this.dataset.id;
   cardsClicked.push(cardArray.at(cardId).name);
   cardsClickedIds.push(cardId);
@@ -83,7 +83,7 @@ const createBoard = function () {
     card.setAttribute("src", "images/blank.jpg");
     card.setAttribute("data-id", i);
     card.classList.add("main__grid-item");
-    card.addEventListener("click", flipCard);
+    card.addEventListener("click", flip);
     gameGrid.appendChild(card);
   });
 };

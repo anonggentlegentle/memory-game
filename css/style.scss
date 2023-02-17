@@ -1,3 +1,6 @@
+$bp-1: 43.75em; // 700px
+$bp-2: 25em; // 400px
+
 *,
 *::after,
 *::before {
@@ -10,6 +13,10 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   color-scheme: dark light;
+
+  @media only screen and (max-width: $bp-1) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -52,6 +59,11 @@ video {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap: 4rem;
+
+    @media only screen and (max-width: $bp-2) {
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+      gap: 2rem;
+    }
   }
 
   &__grid-item {
@@ -70,6 +82,10 @@ video {
   &--1 {
     font-size: 5rem;
     margin-bottom: 2rem;
+
+    @media only screen and (max-width: $bp-1) {
+      text-align: center;
+    }
   }
 
   &--2 {

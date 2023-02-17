@@ -11,6 +11,11 @@ html {
   font-size: 62.5%;
   color-scheme: dark light;
 }
+@media only screen and (max-width: 43.75em) {
+  html {
+    font-size: 50%;
+  }
+}
 
 body {
   min-height: 100vh;
@@ -47,6 +52,12 @@ video {
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 4rem;
 }
+@media only screen and (max-width: 25em) {
+  .main__grid {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 2rem;
+  }
+}
 .main__grid-item {
   border: 2px solid blue;
   border-radius: 1rem;
@@ -60,6 +71,11 @@ video {
 .heading--1 {
   font-size: 5rem;
   margin-bottom: 2rem;
+}
+@media only screen and (max-width: 43.75em) {
+  .heading--1 {
+    text-align: center;
+  }
 }
 .heading--2 {
   font-size: 3rem;
